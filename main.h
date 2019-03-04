@@ -1,3 +1,8 @@
+// thanks to dfrobot
+// https://www.dfrobot.com/wiki/index.php/Gravity:_I2C_OLED-2864_Display
+// https://www.dfrobot.com/wiki/index.php/Light_Disc_(SKU:DFR0106)
+// https://www.dfrobot.com/product-1121.html
+
 #include <DFRobotDFPlayerMini.h>
 #include "SoftwareSerial.h"
 #include "U8glib.h"
@@ -27,8 +32,8 @@ int buttonState = 0;         // variable for reading the pushbutton status
 int buttonState1 = 0; 
 
 // variables for button timing
-long buttonHeld;        // will store last time LED was updated
-const long waitTime = 100000;           // interval at which to blink (milliseconds)
+long buttonHeld;        // will store time button held down
+const long waitTime = 100000;           // wait time for trigger
 
 // setup serial
 SoftwareSerial mySoftwareSerial(11, 10); // RX, TX
